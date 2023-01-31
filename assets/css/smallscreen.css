@@ -1,0 +1,122 @@
+@media screen and (max-width: 800px) {
+
+    #main-container{
+        position: relative;
+        display: flex;
+        background: url('../img/nuka-girl-flag.png') right no-repeat fixed;
+        background-size: cover;
+        height: 100vh;
+        width: auto;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #content-container {
+        position: absolute;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-content: center;
+        width: 80vw;
+        height: 90vh;
+        gap: 1vw;
+    }
+
+    /*.card, .back ,.front {*/
+    /*    display: flex;*/
+    /*    min-width: 40vw;*/
+    /*    min-height: 10vh;*/
+    /*    flex: 1 1;*/
+    /*    font-size: 4vh;*/
+    /*}*/
+
+    .card, .front, .back {
+        min-width: 40vw;
+        min-height: 10vh;
+        flex: 0 2;
+        font-size: 2.8vh;
+    }
+
+    .card {
+        transition: transform 1.5s ease-out, transform 1s ease-out;
+        transform-style: preserve-3d;
+    }
+
+    .container {
+        perspective: 500px;
+    }
+    .container:hover .card {
+        will-change: transform;
+        transform: rotateY(180deg);
+    }
+
+    .back{
+        position: absolute;
+        color: var(--vegas-gold);
+        background-color: var(--yale-blue);
+        --moz-backface-visibility: hidden ;
+        transform: rotateX(0deg);
+        backface-visibility: hidden ;
+        z-index: 2;
+        opacity: 97%;
+
+    }
+    .front{
+        position: absolute;
+        transform: rotateY(180deg);
+        color: var(--vegas-gold);
+        background-color: var(--cadet);
+        z-index: 1;
+        opacity: 80%;
+    }
+
+    #card-group {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 1 1 auto;
+        padding: 1vh;
+        gap: 1vh;
+        overflow-y: scroll;
+        scrollbar-color: var(--vegas-gold) black;
+        scrollbar-width: auto;
+    }
+
+    #home-title {
+        font-size: 3.2vh;
+        width: 100%;
+        flex: 0 1;
+
+    }
+
+}
+
+/*@media screen and (max-height: 900px) and (max-width: 500px){*/
+
+/*    #home-title {*/
+/*        font-weight: bold;*/
+/*        font-size: 3.3vh;*/
+/*        font-family: Playball;*/
+/*        width: 100%;*/
+/*        flex: 0 1;*/
+/*    }*/
+
+/*    .card {*/
+/*        font-size: 3.0vh;*/
+/*        min-width: 20vh;*/
+/*    }*/
+/*    .back, .front{*/
+/*        position: absolute;*/
+/*    }*/
+/*    .container {*/
+/*        perspective: 500px;*/
+/*    }*/
+/*    .container:hover .card {*/
+/*        will-change: transform;*/
+/*        transform: rotateY(180deg);*/
+
+
+/*    }*/
+/*}*/
